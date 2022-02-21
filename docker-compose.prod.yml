@@ -17,15 +17,6 @@ services:
       - ./:/code
     depends_on:
       - postgres
-  documentation:
-    restart: always
-    environment:
-      - VIRTUAL_HOST=cookiecutterdocs.skydreamy.com
-      - LETSENCRYPT_HOST=cookiecutterdocs.skydreamy.com
-    build: ./
-    command: "mkdocs serve"
-    volumes:
-      - ./:/code
 
 networks:
   default:
