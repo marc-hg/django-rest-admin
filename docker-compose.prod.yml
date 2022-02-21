@@ -5,9 +5,9 @@ services:
   web:
     restart: always
     environment:
-      - DJANGO_SECRET_KEY=local
-      - VIRTUAL_HOST=cookiecutter.skydreamy.com
-      - LETSENCRYPT_HOST=cookiecutter.skydreamy.com
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:-djangosecret}
+      - VIRTUAL_HOST=${MY_HOST:-example.com}
+      - LETSENCRYPT_HOST=${MY_HOST:-example.com}
     build: ./
     command: >
       bash -c "python wait_for_postgres.py &&
