@@ -26,3 +26,8 @@ services:
     command: "mkdocs serve"
     volumes:
       - ./:/code
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
