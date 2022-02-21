@@ -2,6 +2,9 @@ version: "3"
 services:
   postgres:
     image: postgres:11.6-alpine
+    restart: always
+    volumes:
+      - db_django:/var/lib/postgresql/data
   web:
     restart: always
     environment:
@@ -15,6 +18,9 @@ services:
                ./manage.py runserver --noreload 0.0.0.0:80"
     depends_on:
       - postgres
+
+volumes:
+  db_django:
 
 networks:
   default:
