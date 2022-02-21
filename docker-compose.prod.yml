@@ -1,8 +1,7 @@
 version: "3"
 services:
   postgres:
-    image: postgres:alpine
-    container_name: postgres
+    image: postgres:11.6-alpine
   web:
     restart: always
     environment:
