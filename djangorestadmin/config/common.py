@@ -200,3 +200,5 @@ class Common(Configuration):
             'rest_framework.authentication.TokenAuthentication',
         )
     }
+
+    CSRF_TRUSTED_ORIGINS = ['https://cookiecutter.skydreamy.com','https://*.127.0.0.1']
